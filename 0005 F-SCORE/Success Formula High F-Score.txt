@@ -1,0 +1,36 @@
+Success Formula High F-Score
+Piotroski’s High F-Score investment strategy states that eight or nine criteria must be met in order to purchase.
+
+ 
+
+MktCapM is >= US$ 300 million (basis year 2000) adjusted yearly
+
+ 
+
+A. Profitability
+
+ 
+
+1. Return on Asset (ROA%) for latest FY is > 0 = Score 1
+2. Operating Cash Flow for latest FY is > Operating Cash Flow from 1 year ago ( FY-1) = Score 1
+3. Return on Assets (ROA%) for latest FY is > FY prior = Score 1
+4. Operating Cash Flow for latest FY is > Net Income (before extraordinary items) for latest FY = Score 1
+
+ 
+
+B. Leverage, liquidity and source of funds
+
+ 
+
+5. Long-term Debt to asset growth over 1 year is < 0 = Score 1
+6. Current Ratio growth over 1 year is > 0 = Score 1
+7. No New Shares Issues in the preceding FY = Score 1
+
+ 
+
+C. Operating efficiency
+
+ 
+
+8. Gross Margin growth over 1 year is > 0 = Score 1
+9. Asset Turnover growth over 1 year is > 0 = Score 1
