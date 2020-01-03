@@ -1,0 +1,33 @@
+- https://clubedovalor.com.br/magic-formula/
+Joel Greenblatt é um reconhecido gestor de investimentos.
+Ele esteve à frente da Gothan Partners, um hedge fund que obteve desempenho anualizado sem precedentes na indústria: 50% ao ano ao longo de 10 anos consecutivos.
+“É melhor comprar uma empresa maravilhosa a um preço justo do que comprar uma empresa justa a um preço maravilhoso.” Frase de Buffett
+- “bom negócio” - ROC
+	Retorno sobre o capital (ROC) = Ebit/Capital
+	Ebit significa earnings before interest and taxes e representa uma aproximação do que seria o “lucro operacional” de uma empresa
+	Capital traduz os “ativos fixos” somados com o capital de giro líquido (ativo circulante – passivo circulante – caixa e equivalentes)
+	O “Ebit” é utilizado em detrimento do “lucro líquido” para que possa ser realizada, com mais facilidade, uma comparação entre empresas com diferentes estruturas de capital e resultados financeiros..
+	Já o “Capital” exclui ativos intangíveis e o ágio, para que o cálculo leve em consideração apenas os ativos realmente utilizados pela empresa para gerar retornos maiores, no futuro.
+- O preço justo - EY
+	Greenblatt utilizou um múltiplo chamado de earning yield, muito similar ao inverso do popular P/L.
+	preferiu utilizar o “Ebit” em detrimento do “lucro”, já que o lucro líquido é muito influenciado pela estrutura de capital escolhida por cada empresa.
+	E, em vez de utilizar o “Patrimônio Líquido” no denominador, Greenblatt opta por um múltiplo chamado de Total Enterprise Value (TEV).
+	TEV indica, basicamente, qual seria o custo que alguém teria que arcar para adquirir a empresa inteira.
+	ele batiza esta relação entre EBIT e TEV (EBIT/TEV) de Earnings Yield (EY).
+	EY = Ebit/Tev
+
+- https://en.wikipedia.org/wiki/Return_on_capital
+Return on capital (ROC), or return on invested capital (ROIC), is a ratio used in finance, valuation and accounting, as a measure of the profitability and value-creating potential of companies relative to the amount of capital invested by shareholders and other debtholders.[1] It indicates how effective a company is at turning capital into profits.
+The ratio is calculated by dividing the after tax operating income (NOPAT) by the average book-value of the invested capital (IC).
+
+Net operating assets (NOA) are a business's operating assets minus its operating liabilities. NOA is calculated by reformatting the balance sheet so that operating activities are separated from financing activities. This is done so that the operating performance of the business can be isolated and valued independently of the financing performance. Management is usually not responsible for creating value through financing activities unless the company is in the finance industry, therefore reformatting the balance sheet allows investors to value just the operating activities and hence get a more accurate valuation of the company.
+
+NOA are mathematically equivalent to the invested capital (IC), which represents the funds invested into the company that demand a financial return in the form of dividends (equity) or interests (other short and long-term debts, excluding operating liabilities such as Accounts Payable).
+
+- https://www.investopedia.com/terms/r/returnoninvestmentcapital.asp
+Return on invested capital (ROIC) is a calculation used to assess a company's efficiency at allocating the capital under its control to profitable investments. The return on invested capital ratio gives a sense of how well a company is using its money to generate returns. Comparing a company's return on invested capital with its weighted average cost of capital (WACC) reveals whether invested capital is being used effectively. This measure is also known simply as "return on capital."
+
+The value in the numerator can also be calculated in a number of ways. The most straightforward way is to subtract dividends from a company's net income.
+On the other hand, because a company may have benefited from a one-time source of income unrelated to its core business—a windfall from foreign exchange rate fluctuations, for example—it is often preferable to look at net operating profit after taxes (NOPAT).
+
+NOPAT is calculated by adjusting the operating profit for taxes: (operating profit) * (1 - effective tax rate). Operating profit is also referred to as earnings before interest and tax (EBIT). Many companies will report their effective tax rates for the quarter or fiscal year in their earnings releases, but not all.

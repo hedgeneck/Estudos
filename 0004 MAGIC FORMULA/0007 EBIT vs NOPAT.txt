@@ -1,0 +1,4 @@
+https://www.valorebrasil.com.br/2017/07/01/o-que-e-ebitda-e-qual-a-diferenca-entre-ebitda-lucro-liquido-e-nopat/ (ver gráfico_)
+Alguns lugares mandam usar EBIT (wikipedia, clube do valor) para cálculo de ROC e em outros manda usar NOPAT (investopedia)
+basicamente em EBIT você pega earnings e soma Interest e Taxes, no NOPAT você soma apenas interest
+NOPAT é como se fose um EBI

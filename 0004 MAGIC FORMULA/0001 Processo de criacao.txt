@@ -1,0 +1,10 @@
+- Pensar no nome da estratégia e criar nome do folder, o folder implementation
+- Pensar nos dados que provavelmente vai organizar e já mandar para a pasta /data dentro de algum subfolder
+- Criar arquivos de instrução e referências e possivelmente resumo com descrição da estratégia.
+- Criar jupyter notebook dentro de instructions. O nome pode ser run.
+- Copiar e colar código, pegar referências de:
+	0003 BACKTESTING
+	https://github.com/dtgoyal1/Trading-with-Momentum/blob/master/Project.ipynb
+- Fazer uma análise exploratória dos dados de entrada. Descrever os arquivos de entrada, abrir, ler as colunas, entender a estrutura.
+
+https://clubedovalor.com.br/magic-formula/

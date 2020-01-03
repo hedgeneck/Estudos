@@ -1,0 +1,117 @@
+- Notar primeiramente que todos os dados são mensais. Na verdade, são trimestrais, mas só aparecem nos meses em que tem balanço
+- Os arquivos que estão escritos conso são os não consolidados
+
+Volume Mensal
+Volume Médio 1 mês mensal
+Volume Diário
+Working Capital Mensal
+Valor Mercado Mensal
+Valor Mercado Diário
+Total Assets Mensal
+Short Term Debt Mensal
+Short Term Borrowing Mensal
+pc_conso? 
+Passivo Circulante Mensal
+Net Debt Mensal
+Goodwill Mensal
+Fechamento Diário
+Emp Fin CP?
+EBIT Mensal
+Dívida Líquida
+Capital Giro
+Ativo Circulante Mensal
+Ativo Total
+
+
+
+Volume Mensal
+Volume Médio 1 mês mensal
+Volume Diário
+Working Capital Mensal
+	the difference between a company’s current assets, such as cash, accounts receivable (customers’ unpaid bills) and inventories of raw materials and finished goods, and its current liabilities, such as accounts payable.
+	Working capital is also known as net working capital (NWC)
+Valor Mercado Mensal
+	Market Cap
+Valor Mercado Diário
+Total Assets Mensal
+Short Term Debt Mensal
+	Short term debt, also called current liabilities, is a firm's financial obligations that are expected to be paid off within a year. Common types of short term debt include short-term bank loans, accounts payable, wages, lease payments, and income taxes payable.
+	Short term debt is also called current liabilities
+	https://www.investopedia.com/terms/s/shorttermdebt.asp
+Short Term Borrowing Mensal
+	Short-term Borrowings. Reflects the total carrying amount as of the balance sheet date of debt having initial terms less than one year or the normal operating cycle, if longer. (Igual ao Short Term Debt?)
+pc_conso? 
+Passivo Circulante Mensal
+	Passivo circulante são as obrigações que normalmente são pagas dentro de um ano: contas a pagar, dívidas com fornecedores de mercadorias ou matérias-prima, impostos a recolher (para o governo), empréstimos bancários com vencimento nos próximos 360 dias, provisões
+	Current Liabilities
+Net Debt Mensal
+	Net debt is a liquidity metric used to determine how well a company can pay all of its debts if they were due immediately. Net debt shows much debt a company has on its balance sheet compared to its liquid assets. Net debt shows how much cash would remain if all debts were paid off and if a company has enough liquidity to meet its debt obligations.
+	Net Debt=STD+LTD−CCE
+		STD= (Passivo Circulante)
+		Debt that is due in 12 months or less
+		and can include short-term bank
+		loans, accounts payable, and lease
+		payments
+		LTD= 
+		Long-term debt is debt that with a
+		maturity date longer than one year
+		and include bonds, lease payments,
+		term loans, small and notes payable
+		CCE=
+		Cash and liquid instruments that can be
+		easily converted to cash.
+	https://www.investopedia.com/terms/n/netdebt.asp
+Goodwill Mensal
+Fechamento Diário
+Emp Fin CP?
+EBIT Mensal
+Dívida Líquida
+	É a Dívida Bruta descontada das disponibilidades da empresa.
+Capital Giro
+	os recursos que a empresa dispõe para arcar com suas despesas de custos fixos e variáveis independente de estar gerando lucro ou recebendo recursos de outras fontes.
+Ativo Circulante Mensal
+	Capital de Giro ou em inglês Working Capital
+	O Capital de Giro seria igual ao Ativo Circulante
+Ativo Total
+
+
+###
+Volume Mensal
+Volume Médio 1 mês mensal
+Volume Diário
+
+Valor Mercado Mensal
+Valor Mercado Diário
+Fechamento Diário
+###
+EBIT Mensal
+###
+Total Assets Mensal
+	= Ativo Total
+
+Ativo Circulante Mensal
+	= Capital Giro
+Passivo Circulante Mensal
+	= pc_conso?
+Working Capital Mensal
+Short Term Debt Mensal
+	= Short Term Borrowing Mensal
+Net Debt Mensal
+	= Dívida Líquida
+Goodwill Mensal
+
+Emp Fin CP?
+###
+
+
+
+
+
+
+
+
+ TotEmFiCP
+ Em moeda orig
+ em milhares
+ consolid:não*
+ABCB4

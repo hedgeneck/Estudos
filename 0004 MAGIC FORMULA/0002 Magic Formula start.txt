@@ -1,0 +1,14 @@
+Success Formula Magic Formula
+Financial and Utility companies are excluded
+MktCapM is >= US$ 300 million (basis year 2000) adjusted yearly
+Rank all stocks according to latest filing Return on Capital (ROC)
+Rank all stocks according to latest filing Earnings Yield (EY)
+Take the 200 stocks with the smallest sum [rank (ROC) + rank (EY)]
+
+EMPRESA BOA: Return on capital = EBIT / (Net Working Capital + Net Fixed Assets).
+	Return on capital = EBIT / NOA.
+
+PREÇO JUSTO: Earnings yield = EBIT / Enterprise Value.
+	Return on capital = EBIT / EV.
+
+O livro do Joel Greenblatt está em Desktop/Books/Value Investing

@@ -1,0 +1,17 @@
+[16:37, 05/11/2019] Erich: Boa
+[16:38, 05/11/2019] Erich: Ontem tava quebrando a cabeça pra montar uma metodologia. 
+Talvez se começássemos pelo volume negociado de cada ação já eliminaríamos praticamente tudo que não precisamos
+[16:40, 05/11/2019] Erich: Mas o problema é temporal dai. Tipo, vamos analisar o ano de 1995 e fazer um corte de ações cujo volume mensal foi superior a 2 ou 3 milhões no mês
+[16:40, 05/11/2019] Erich: Isso vai resultar em 200 ações digamos
+[16:40, 05/11/2019] Erich: Fazemos isso para cada ano. Mas cada ano vai ter um número diferente de ações (por obvio)
+[16:41, 05/11/2019] Erich: Esse é um approach que talvez consuma menos recursos pq a limpa inicial é maior
+[16:43, 05/11/2019] Erich: Eu estava fazendo assim antes:
+1) concatenava as bases de dados das ativas + canceladas;
+2) fazia o cálculo da variável de interesse (cálculo do ROIC por exemplo);
+3) eliminava ações de financeiras;
+4) eliminava ROIC negativo;
+.
+.
+.
+X) eliminava ações com volume abaixo de 3 milhões no mês
+[16:44, 05/11/2019] Erich: Meus arquivos do Jupyter estavam ficando com 50mb! Demorando pra rodar

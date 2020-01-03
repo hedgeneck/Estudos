@@ -1,0 +1,2 @@
+- Bom fazer uma análise exploratória dos dados pra colocar eles num formatinho legal (seria data munging).
+https://medium.com/@alegeorgelustosa/an%C3%A1lise-explorat%C3%B3ria-e-preditiva-do-dataset-titanic-em-python-fbd5e5bb7328

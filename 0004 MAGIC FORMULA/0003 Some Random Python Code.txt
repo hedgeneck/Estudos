@@ -1,0 +1,459 @@
+### DUAL MOMENTUM
+
+import pandas as pd
+import numpy as np
+
+price = pd.read_csv('Data.csv', index_col="Dates")
+mom = price.pct_change(12)
+ret = price.pct_change()
+
+price.tail()
+
+mom.head(13)
+
+l = len(mom)
+w = pd.DataFrame(np.zeros(shape=(l,3)), index=ret.index)
+
+w.tail()
+
+for i in range(12,l-1):
+    if mom.iloc[i,0] > mom.iloc[i, 1]:
+        if mom.iloc[i, 0] > mom.iloc[i, 3]:
+            w.iloc[i+1,0] = 1
+        else:
+            w.iloc[i+1,2] = 1
+    else:
+        if mom.iloc[i, 1] > mom.iloc[i, 3]:
+            w.iloc[i+1,1] = 1
+        else:
+            w.iloc[i+1,2] = 1
+
+mom.iloc[12,3]
+mom.iloc[12]
+
+for i in range(12,l-1):
+    print i
+
+final = 100 * (1 + retT.iloc[12:,:]).cumprod()
+
+final = (final / final.iloc[0,:]) * 100
+
+final.plot()
+plt.show()
+
+### MONITORAMENTO REBALANCEAMENTO CARTEIRA
+
+import pandas as pd
+import numpy as np
+from scipy.stats import norm, stats
+import matplotlib.pyplot as plt
+import operator
+#import pandas_datareader.data as web
+import datetime
+
+close = pd.read_excel('monthly_close_clean_v3.xlsx', index_col='Date')
+close.tail()
+close_daily = pd.read_excel('matrix_fix.xlsx', index_col='Data')
+close_monthly = close_daily.resample('M').last()
+close_monthly.tail()
+
+def planilha_excel_ibov(aba):
+    '''
+    usar sheet_name ou sheetname
+    '''
+    df = pd.read_excel('PortfolioCompositionPerQuarter_IBOVESPA_1990_2019.xls', sheetname=aba, skiprows=1)
+    df.columns = ['codigo', 'acao', 'tipo', 'qtde', 'part']
+    return df.codigo
+
+planilha_excel_ibov('Mai 2019').head()
+
+def retorno_ibov_mom(data, mes, mom):
+    '''
+    retorno_ibov_mom(close2, '2017-12', 6)
+    '''
+    retorno = data.pct_change(mom)
+    rank = retorno[mes].T
+    rank = rank.reset_index(drop=False)
+    rank.columns = ['Acao', mes]
+    rank = rank.sort_values(mes, ascending=False)
+    return rank
+
+retorno_ibov_mom(close_monthly, '2019-04', 6).head(15)
+
+def carteira_momentum(data, mes, mom):
+    '''
+    retorno_ibov_mom(close2, '2017-12', 6)
+    '''
+    retorno = data.pct_change(mom)
+    rank = retorno[mes].T
+    rank = rank.reset_index(drop=False)
+    rank.columns = ['Acao', mes]
+    rank = rank.sort_values(mes, ascending=False)
+    return rank
+
+def portfolio_return(data, mes_ref, mes_analise, qtde_acoes):
+    '''
+    mes_ref: '2017-12'
+    mes_analise: '2018-01'
+    '''
+    df = retorno_ibov_mom(data, mes_ref, 6).head(qtde_acoes)
+    df2 = retorno_ibov_mom(data, mes_analise, 1)
+    df3 = pd.merge(df, df2, on='Acao')
+
+    df3.index.name = 'Acao'
+    
+    df4 = df3.append(df3.agg(['mean']), sort=True)
+    return df4
+
+def carteira_mes(aba, tipo_carteira, mes, mom):#, ano_anterior, ano_corrente):
+    '''
+    Objetivo é selecionar a carteira do mês para identificar quais ações mais subiram
+    Pode ser feita análise baseada na carteira do Ibovespa, IBrX, SmallCaps ou todas ações do Fundamentus
+    Parâmetros:
+    -----------
+    aba: 'Jan 2019'
+    tipo_carteira: ibov, ibrx, small, fundamentus
+    '''    
+    if tipo_carteira == 'ibov':
+
+        df = pd.read_excel('PortfolioCompositionPerQuarter_IBOVESPA_1990_2019.xls', sheetname=aba, skiprows=1)
+        df.columns = ['codigo', 'acao', 'tipo', 'qtde', 'part']
+        df_cod = df.codigo
+        df_cod_filter = df_cod.values.tolist()
+        carteira1 = close_daily.filter(df_cod_filter, axis=1)
+        carteira_mes = carteira1.resample('M').last()
+        
+        retorno = carteira_mes.pct_change(mom)
+        rank = retorno[mes].T
+        rank = rank.reset_index(drop=False)
+        rank.columns = ['Acao', mes]
+        rank = rank.sort_values(mes, ascending=False)
+    return rank
+
+def carteira_mes(aba, tipo_carteira, mes, mom):#, ano_anterior, ano_corrente):
+    '''
+    Objetivo é selecionar a carteira do mês para identificar quais ações mais subiram
+    Pode ser feita análise baseada na carteira do Ibovespa, IBrX, SmallCaps ou todas ações do Fundamentus
+    Parâmetros:
+    -----------
+    aba: 'Jan 2019'
+    tipo_carteira: ibov, ibrx, small, fundamentus
+    '''    
+    if tipo_carteira == 'ibov':
+        df = pd.read_excel('PortfolioCompositionPerQuarter_IBOVESPA_1990_2019.xls', sheetname=aba, skiprows=1)
+        
+    elif tipo_carteira == 'ibrx':
+        df = pd.read_excel('PortfoliocompositionPerQuarter_IBrX_100_1995_2017.xls', sheetname=aba, skiprows=1)
+        
+    elif tipo_carteira == 'small':
+        df = pd.read_excel('PortfolioCompositionPerQuarter_SMLL_2006_2018.xls', sheetname=aba, skiprows=1)
+    
+    elif tipo_carteira == 'fundamentus':
+        df = pd.read_excel('Fundamentus.xlsx', sheetname=aba, skiprows=1)
+    
+
+    df.columns = ['codigo', 'acao', 'tipo', 'qtde', 'part']
+    df_cod = df.codigo
+    df_cod_filter = df_cod.values.tolist()
+    carteira1 = close_daily.filter(df_cod_filter, axis=1)
+    carteira_mes = carteira1.resample('M').last()
+        
+    retorno = carteira_mes.pct_change(mom)
+    rank = retorno[mes].T
+    rank = rank.reset_index(drop=False)
+    rank.columns = ['Acao', mes]
+    rank = rank.sort_values(mes, ascending=False)
+    return rank
+
+carteira_mes('Mai 2019', 'ibov', '2019-04', 6).head(10)
+carteira_mes('Mai 2019', 'ibrx', '2019-04', 6).head(10)
+
+df = pd.read_excel('PortfolioCompositionPerQuarter_IBOVESPA_1990_2019.xls', sheetname='Mai 2019', skiprows=1)
+df.columns = ['codigo', 'acao', 'tipo', 'qtde', 'part']
+df_cod = df.codigo
+df_cod.head()
+
+filtro_cod = df_cod.values.tolist()
+carteira1 = close_daily.filter(filtro_cod, axis=1)
+carteira1
+carteira_mes = carteira1.resample('M').last()
+carteira_mes 
+
+    retorno = carteira_mes.pct_change(mom)
+    rank = retorno[mes].T
+    rank = rank.reset_index(drop=False)
+    rank.columns = ['Acao', mes]
+    rank = rank.sort_values(mes, ascending=False)
+return rank
+
+### TRADING WITH MOMENTUM
+import pandas as pd
+import numpy as np
+import helper
+import project_helper
+import project_tests
+
+df = pd.read_csv('../../data/project_1/eod-quotemedia.csv', parse_dates=['date'], index_col=False)
+
+close = df.reset_index().pivot(index='date', columns='ticker', values='adj_close')
+
+print('Loaded Data')
+
+project_helper.print_dataframe(close)
+
+print(close)
+
+apple_ticker = 'AAPL'
+project_helper.plot_stock(close[apple_ticker], '{} Stock'.format(apple_ticker))
+
+def resample_prices(close_prices, freq='M'):
+    """
+    Resample close prices for each ticker at specified frequency.
+    
+    Parameters
+    ----------
+    close_prices : DataFrame
+        Close prices for each ticker and date
+    freq : str
+        What frequency to sample at
+        For valid freq choices, see http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases
+    
+    Returns
+    -------
+    prices_resampled : DataFrame
+        Resampled prices for each ticker and date
+    """
+    # TODO: Implement Function
+    check = close_prices.resample(freq).last()
+    print(check)
+    return check
+
+project_tests.test_resample_prices(resample_prices)
+
+monthly_close = resample_prices(close)
+project_helper.plot_resampled_prices(
+    monthly_close.loc[:, apple_ticker],
+    close.loc[:, apple_ticker],
+    '{} Stock - Close Vs Monthly Close'.format(apple_ticker))
+
+def compute_log_returns(prices):
+    """
+    Compute log returns for each ticker.
+    
+    Parameters
+    ----------
+    prices : DataFrame
+        Prices for each ticker and date
+    
+    Returns
+    -------
+    log_returns : DataFrame
+        Log returns for each ticker and date
+    """
+    # TODO: Implement Function
+    #print(prices)
+    log = np.log(prices) - np.log(prices.shift(1))
+    print(log)
+    return log
+
+def test1_compute_normal_returns(prices):
+    normal = (prices - prices.shift(1))/prices.shift(1)
+    return normal
+project_tests.test_compute_log_returns(compute_log_returns)
+
+monthly_close_returns = compute_log_returns(monthly_close)
+test1_monthly_close_returns = test1_compute_normal_returns(monthly_close)
+
+project_helper.plot_returns(
+    monthly_close_returns.loc[:, apple_ticker],
+    'Log Returns of {} Stock (Monthly)'.format(apple_ticker))
+project_helper.plot_shifted_returns(
+    monthly_close_returns.loc[:, apple_ticker],
+    test1_monthly_close_returns.loc[:, apple_ticker],
+    'Previous Returns of {} Stock'.format(apple_ticker))
+
+def shift_returns(returns, shift_n):
+    """
+    Generate shifted returns
+    
+    Parameters
+    ----------
+    returns : DataFrame
+        Returns for each ticker and date
+    shift_n : int
+        Number of periods to move, can be positive or negative
+    
+    Returns
+    -------
+    shifted_returns : DataFrame
+        Shifted returns for each ticker and date
+    """
+    # TODO: Implement Function
+    print(returns)
+    chak = returns.shift(shift_n)
+    print(chak)
+    return chak
+
+project_tests.test_shift_returns(shift_returns)
+
+prev_returns = shift_returns(monthly_close_returns, 1)
+
+lookahead_returns = shift_returns(monthly_close_returns, -1)
+
+test1_prev_returns = shift_returns(test1_monthly_close_returns, 1)
+test1_lookahead_returns = shift_returns(test1_monthly_close_returns, -1)
+
+project_helper.plot_shifted_returns(
+    prev_returns.loc[:, apple_ticker],
+    monthly_close_returns.loc[:, apple_ticker],
+    'Previous Returns of {} Stock'.format(apple_ticker))
+project_helper.plot_shifted_returns(
+    lookahead_returns.loc[:, apple_ticker],
+    monthly_close_returns.loc[:, apple_ticker],
+    'Lookahead Returns of {} Stock'.format(apple_ticker))
+
+def get_top_n(prev_returns, top_n):
+    """
+    Select the top performing stocks
+    
+    Parameters
+    ----------
+    prev_returns : DataFrame
+        Previous shifted returns for each ticker and date
+    top_n : int
+        The number of top performing stocks to get
+    
+    Returns
+    -------
+    top_stocks : DataFrame
+        Top stocks for each ticker and date marked with a 1
+    """
+    # TODO: Implement Function
+    
+    yiy = pd.DataFrame(0, index=prev_returns.index, columns=prev_returns.columns)
+    for x in range(prev_returns.shape[0]):
+            yiy.loc[prev_returns.index[x]][prev_returns.iloc[x].nlargest(top_n).index] = 1
+    
+    print(yiy)
+    
+    return yiy
+
+project_tests.test_get_top_n(get_top_n)
+
+top_bottom_n = 50
+df_long = get_top_n(prev_returns, top_bottom_n)
+df_short = get_top_n(-1*prev_returns, top_bottom_n)
+
+test1_df_long = get_top_n(test1_prev_returns, top_bottom_n)
+test1_df_short = get_top_n(-1*test1_prev_returns, top_bottom_n)
+
+project_helper.print_top(df_long, 'Longed Stocks')
+project_helper.print_top(df_short, 'Shorted Stocks')
+
+def portfolio_returns(df_long, df_short, lookahead_returns, n_stocks):
+    """
+    Compute expected returns for the portfolio, assuming equal investment in each long/short stock.
+    
+    Parameters
+    ----------
+    df_long : DataFrame
+        Top stocks for each ticker and date marked with a 1
+    df_short : DataFrame
+        Bottom stocks for each ticker and date marked with a 1
+    lookahead_returns : DataFrame
+        Lookahead returns for each ticker and date
+    n_stocks: int
+        The number number of stocks chosen for each month
+    
+    Returns
+    -------
+    portfolio_returns : DataFrame
+        Expected portfolio returns for each ticker and date
+    """
+    # TODO: Implement Function
+    donow = (df_long*lookahead_returns-df_short*lookahead_returns)/n_stocks
+    return donow
+
+def test2_portfolio_returns(df_long, df_short, lookahead_returns, n_stocks):
+    test2_donow = np.log((np.exp(df_long*lookahead_returns-df_short*lookahead_returns) -1 + n_stocks)/n_stocks)
+    return test2_donow
+
+project_tests.test_portfolio_returns(portfolio_returns)
+
+expected_portfolio_returns = portfolio_returns(df_long, df_short, lookahead_returns, 2*top_bottom_n)
+test1_expected_portfolio_returns = portfolio_returns(test1_df_long,test1_df_short, test1_lookahead_returns, 2*top_bottom_n)
+test2_expected_portfolio_returns = test2_portfolio_returns(df_long,df_short, lookahead_returns, 2*top_bottom_n)
+
+project_helper.plot_returns(expected_portfolio_returns.T.sum(), 'Portfolio Returns')
+project_helper.plot_returns(test1_expected_portfolio_returns.T.sum(), 'Test1 Returns')
+project_helper.plot_returns(
+
+
+test2_expected_portfolio_returns_by_date = np.log((np.exp(test2_expected_portfolio_returns)-1).T.sum().dropna()+1)
+test2_portfolio_ret_mean = np.log((np.exp(test2_expected_portfolio_returns_by_date)).mean())
+test2_portfolio_ret_ste = test2_expected_portfolio_returns_by_date.sem()
+test2_portfolio_ret_annual_rate = (np.exp(test2_portfolio_ret_mean) - 1) * 12*100
+
+print("""
+Mean:                       {:.6f}
+Standard Error:             {:.6f}
+Annualized Rate of Return:  {:.2f}%
+""".format(portfolio_ret_mean, portfolio_ret_ste, portfolio_ret_annual_rate))
+
+print("""
+Mean:                       {:.6f}
+Standard Error:             {:.6f}
+Annualized Rate of Return:  {:.2f}%
+""".format(test1_portfolio_ret_mean, test1_portfolio_ret_ste, test1_portfolio_ret_annual_rate))
+
+print("""
+Mean:                       {:.6f}
+Standard Error:             {:.6f}
+Annualized Rate of Return:  {:.2f}%
+""".format(test2_portfolio_ret_mean, test2_portfolio_ret_ste, test2_portfolio_ret_annual_rate))
+
+
+from scipy import stats
+
+def analyze_alpha(expected_portfolio_returns_by_date):
+    """
+    Perform a t-test with the null hypothesis being that the expected mean return is zero.
+    
+    Parameters
+    ----------
+    expected_portfolio_returns_by_date : Pandas Series
+        Expected portfolio returns for each date
+    
+    Returns
+    -------
+    t_value
+        T-statistic from t-test
+    p_value
+        Corresponding p-value
+    """
+    # TODO: Implement Function
+    t,p = stats.ttest_1samp(expected_portfolio_returns_by_date,0)
+    return t,p/2
+
+project_tests.test_analyze_alpha(analyze_alpha)
+
+t_value, p_value = analyze_alpha(expected_portfolio_returns_by_date.dropna())
+print("""
+Alpha analysis:
+ t-value:        {:.3f}
+ p-value:        {:.6f}
+""".format(t_value, p_value))
+
+t_value, p_value = analyze_alpha(test1_expected_portfolio_returns_by_date.dropna())
+print("""
+Alpha analysis:
+ t-value:        {:.3f}
+ p-value:        {:.6f}
+""".format(t_value, p_value))
+
+t_value, p_value = analyze_alpha(test2_expected_portfolio_returns_by_date.dropna())
+print("""
+Alpha analysis:
+ t-value:        {:.3f}
+ p-value:        {:.6f}
+""".format(t_value, p_value))

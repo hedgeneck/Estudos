@@ -1,0 +1,12 @@
+https://en.wikipedia.org/wiki/Net_operating_assets
+
+EMPRESA BOA: Return on capital = EBIT / (Net Working Capital + Net Fixed Assets).
+	Return on capital = EBIT / NOA.
+
+Invested Capital é equivalente a Net Operating Assets (NOA)
+
+Net operating assets (NOA) are a business's operating assets minus its operating liabilities. NOA is calculated by reformatting the balance sheet so that operating activities are separated from financing activities. This is done so that the operating performance of the business can be isolated and valued independently of the financing performance. Management is usually not responsible for creating value through financing activities unless the company is in the finance industry, therefore reformatting the balance sheet allows investors to value just the operating activities and hence get a more accurate valuation of the company.
+
+Invested capital (IC), which represents the funds invested into the company that demand a financial return in the form of dividends (equity) or interests (other short and long-term debts, excluding operating liabilities such as Accounts Payable).
+
+Net Fixed Assets is the purchase price of all fixed assets (Land, buildings, equipment, machinery, vehicles, leasehold improvements) less accumulated Depreciation, i.e. effectively property, plant and equipment after depreciation. It is however defined as Total Assets - Total Current Assets - Total Intangibles & Goodwill

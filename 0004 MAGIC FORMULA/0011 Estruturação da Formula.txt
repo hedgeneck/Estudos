@@ -1,0 +1,38 @@
+Return on capital = EBIT / (Net Working Capital + Net Fixed Assets).
+
+OK EBIT (EBIT Mensal.xlsx)
+OK Net Working Capital (Working Capital Mensal.xlsx)
+XX Net Fixed Assets ()
+
+Net Fixed Assets = 
+OK	Total Assets (total_assets_mensal.xlxs)
+OK	- Total Current Assets 
+XX	- Total Intangibles & Goodwill
+
+Total Current Assets = 
+	Ativo Circulante Mensal
+	- Passivo Circulante Mensal
+
+Net Fixed Assets = 
+OK	Total Assets (total_assets_mensal.xlxs)
+OK	- (Total )
+XX	- Total Intangibles & Goodwill
+
+# https://www.stockopedia.com/ratios/net-fixed-assets-533/ # definição Net Fixed Assets
+
+
+
+
+Earnings yield = EBIT / Enterprise Value.
+
+OK EBIT
+OK Enterprise Value
+
+Enterprise Value = 
+	Market Value of Equity (valor_mercado.xlxs)
+	+ net interest-bearing debt ()
+
+
+
+
+

@@ -1,0 +1,6 @@
+- Elimina financeiras
+Todo fim de mês:
+	- Elimina ações com volume mensal menor que 2 milhões
+	- Calcula ROIC e EY
+	- Rankeia, exclui negativos e soma os ranks de acordo com Magic Formula
+	- Escolhe 5 ações com melhor rankeamento
