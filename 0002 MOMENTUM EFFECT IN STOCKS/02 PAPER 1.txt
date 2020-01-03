@@ -1,0 +1,8 @@
+### Are momentum premia robust to trade frictions? Tests of large-stock portfolios
+
+- Não curti muito esse paper.
+
+Momentum strategy: the strategy that buys recently ranked past winners and shorts recently ranked past losers
+tests if momentum trades are profitable after controlling for a variety of frictions.
+As top three bolsas seriam NYSE, AMEX e NASDAQ
+Qual o volume de cada uma dessas 3 bolsas?

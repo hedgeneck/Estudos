@@ -1,0 +1,22 @@
+### Fama French 3 factors
+https://www.investopedia.com/terms/f/famaandfrenchthreefactormodel.asp#targetText=The%20Fama%20and%20French%20model,risk%20free%20rate%20of%20return.
+
+The Fama and French Three-Factor Model (or the Fama French Model for short) is an asset pricing model developed in 1992 that expands on the capital asset pricing model (CAPM) by adding size risk and value risk factors to the market risk factor in CAPM. This model considers the fact that value and small-cap stocks outperform markets on a regular basis. By including these two additional factors, the model adjusts for this outperforming tendency, which is thought to make it a better tool for evaluating manager performance.
+
+The model was developed by Nobel laureates Eugene Fama and his colleague Kenneth French in the 1990s.
+Rit is the total return of a stock or portfolio, i at time t;
+Rft is the risk free rate of return at time t;
+RMt is the total market portfolio return at time tl
+Rit - Rft is expected excess return;
+RMt - Rft is the excess return on the market portfolio (index);
+SMBt is the size premium (small minus big); and
+HMLt is the value premium (high minus low).
+β1,2,3 refer to the factor coefficients.
+
+The Fama and French model has three factors: size of firms, book-to-market values and excess return on the market. In other words, the three factors used are SMB (small minus big), HML (high minus low) and the portfolio's return less the risk free rate of return. SMB accounts for publicly traded companies with small market caps that generate higher returns, while HML accounts for value stocks with high book-to-market ratios that generate higher returns in comparison to the market.
+
+The Fama-French five-factor model which added two factors, profitability and investment, came about after evidence showed that the three-factor model was an inadequate model for expected returns because it’s three factors overlook a lot of the variation in average returns related to profitability and investment (Fama and French, 2015).
+[https://blog.quantinsti.com/fama-french-five-factor-asset-pricing-model/#targetText=Fama%20and%20French%20use%20the,%2FM%2C%20profitability%20and%20investment.]
+[https://bibliotecadigital.fgv.br/dspace/handle/10438/27937]
+[https://valorinveste.globo.com/blogs/nefin/coluna/modelos-financeiros-ignorados-pelo-mercado.ghtml]
+http://www.nefin.com.br/principal.html

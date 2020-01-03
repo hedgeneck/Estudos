@@ -1,0 +1,14 @@
+### https://www.investopedia.com/terms/m/momentum_investing.asp
+
+strategy to capitalize on the continuance of an existing market trend.
+It involves going long stocks, futures or market ETFs showing upward-trending prices and short the respective assets with downward-trending prices.
+Momentum investing holds that trends can persist for some time, and it ’s possible to profit by staying with a trend until its conclusion, no matter how long that may be.
+Momentum investors sometimes use two longer-term moving averages, one a bit shorter than the other, for trading signals. Some use 50-day and 200-day moving averages, for example. The 50-day crossing above the 200-day creates a buy signal. A 50-day crossing back below the 200-day creates a sell signal.
+- Sector Momentum
+	Another type of momentum investing strategy involves following price-based signals to go long sector ETFs with the strongest momentum, while shorting the sector ETFs with the weakest momentum, then rotating in an out of the sectors accordingly.
+- Asset Class Trend Following
+	For example, some equity traders closely watch the Treasury yield curve and use it as a momentum signal for equity entries and exits. A 10-year Treasury yield above the two-year yield generally is a buy signal, whereas a two-year yield trading above the 10-year is a sell signal. Notably, the two-year versus 10-year Treasury yields tend to be a strong predictor of recessions, and also has implications for stock markets.
+One such system is CAN SLIM, made famous by William O’Neill, founder of Investor’s Business Daily.
+	https://www.investopedia.com/terms/c/canslim.asp
+- O adversário de momentum factors seria fundamental factors?
+

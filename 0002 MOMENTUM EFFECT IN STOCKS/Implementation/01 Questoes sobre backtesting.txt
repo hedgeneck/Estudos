@@ -1,0 +1,53 @@
+A questão de backtest é complicada pois temos vários frameworks para backtesting em python
+
+Uma que me pareceu bem simples mas não sei se dá pra fazer muita coisa como ajustar carteira
+https://pypi.org/project/Backtesting/
+
+Tem algumas coisas no quantopian
+https://www.quantopian.com/posts/automated-backtests
+http://clubedefinancas.com.br/materias/algo-trading-com-quantopian/
+Depois do algoritmo desenvolvido, com qual corretora posso colocar meu programa em python para rodar na pratica?
+O Quantopian já ofereceu este serviço no passado, mas não mais. O QuantConnect se não me engano, oferece esta possibilidade. Assim como algumas corretoras online como a Interactive Brokers que possui uma API Python para integrar na plataforma deles.
+https://github.com/quantopian
+Quantopian tem o pyfolio e o zipline
+O sentdex tem um curso de python for finance, e dentro tem uma subparte de python for algorithmic trading que tem entre outras coisas pyfolio
+https://www.youtube.com/watch?v=GlV_QO5B2eU&list=PLQVvvaa0QuDcOdF96TBtRtuQksErCEBYZ&index=13
+O Erich elogiou bastante uma backtrader
+https://www.backtrader.com/
+
+Blog post sobre Momentum
+https://www.backtrader.com/blog/2019-05-20-momentum-strategy/momentum-strategy/
+https://teddykoker.com/2019/05/momentum-strategy-from-stocks-on-the-move-in-python/
+https://www.youtube.com/channel/UCefkgjtkENB2-mR8jftChUQ
+
+### BackTrader
+https://www.backtrader.com/docu/
+
+Basic requirements are: (acredito que seja OU, qualquer uma destas...)
+Python 2.7
+Python 3.2 / 3.3/ 3.4 / 3.5
+pypy/pypy3
+	
+	Installation
+	> pip install backtrader[plotting]
+
+	pra rodar um notebook
+	> jupyter notebook
+
+Lembrar algumas coisinhas sobre OOP em python
+https://dbader.org/blog/meaning-of-underscores-in-python#targetText=A%20double%20underscore%20prefix%20causes,the%20class%20is%20extended%20later.
+__ causa name mangling
+https://www.w3schools.com/python/python_inheritance.asp
+PEP8 é tipo um conjunto de convenções
+https://pep8.org/#descriptive-naming-styles
+https://pep8.org/
+
+>>> t = Test()
+>>> dir(t)
+['_Test__baz', '__class__', '__delattr__', '__dict__', '__dir__',
+ '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+ '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__',
+ '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__',
+ '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+ '__weakref__', '_bar', 'foo']
+ - O que faz o dir()?
