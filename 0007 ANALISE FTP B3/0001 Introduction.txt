@@ -1,0 +1,12 @@
+- Os dados se encontram em
+ftp://ftp.bmf.com.br/MarketData/
+
+- Tem 3 pastas
+BMF/
+Bovespa-Opcoes/
+Bovespa-Vista/
+
+- Em cada pasta, tem 3 tipos de arquivos
+NEG_LAYOUT
+OFER_CPA_LAYOUT
+OFER_VDA_LAYOUT
